@@ -25,12 +25,12 @@ class SignInScreen extends StatelessWidget {
                 color: Colors.white,
               ),
               child: Column(
-                children: const [
+                children: [
                   // Email
                   CustomTextField(icon: Icons.email, label: 'Email'),
                   // Password
                   CustomTextField(
-                      icon: Icons.lock, label: 'Password', obscureText: true),
+                      icon: Icons.lock, label: 'Password', isSecrect: true),
                 ],
               ),
             ),
