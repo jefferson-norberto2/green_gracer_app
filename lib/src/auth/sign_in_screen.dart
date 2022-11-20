@@ -96,7 +96,10 @@ class SignInScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                       ),
-                      child: const Text('Create Account'),
+                      child: const Text(
+                        'Create Account',
+                        style: TextStyle(fontSize: 18),
+                      ),
                     ),
                   ),
                 )
