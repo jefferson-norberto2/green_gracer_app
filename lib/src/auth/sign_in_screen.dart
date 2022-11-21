@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:green_gracer_app/src/auth/components/custom_text_field.dart';
+import 'package:green_gracer_app/src/config/custom_colors.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -8,7 +9,7 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: CustomColors.customSwatchColor,
       body: Column(
         children: [
           Expanded(
@@ -16,13 +17,13 @@ class SignInScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // App name
-                const Text.rich(
+                Text.rich(
                   TextSpan(
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 40,
                       ),
                       children: [
-                        TextSpan(
+                        const TextSpan(
                           text: 'Green',
                           style: TextStyle(
                             color: Colors.white,
@@ -32,7 +33,7 @@ class SignInScreen extends StatelessWidget {
                         TextSpan(
                           text: 'Gracer',
                           style: TextStyle(
-                            color: Colors.amber,
+                            color: CustomColors.customConstrateColor,
                           ),
                         ),
                       ]),
@@ -111,11 +112,13 @@ class SignInScreen extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Forgot Password?',
-                        style: TextStyle(color: Colors.redAccent),
-                      )),
+                    onPressed: () {},
+                    child: Text(
+                      'Forgot Password?',
+                      style:
+                          TextStyle(color: CustomColors.customConstrateColor),
+                    ),
+                  ),
                 ),
 
                 // Divider
