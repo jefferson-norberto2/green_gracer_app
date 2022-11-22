@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:green_gracer_app/src/auth/components/custom_text_field.dart';
 import 'package:green_gracer_app/src/config/custom_colors.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+  SignUpScreen({super.key});
+  final cpfFormartter = MaskTextInputFormatter(
+    mask: '###.###.###-##',
+    filter: {"#": RegExp(r'[0-9]')},
+  );
+  final phoneFormartter = MaskTextInputFormatter(
+    mask: '(##) # ####-####',
+    filter: {"#": RegExp(r'[0-9]')},
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -57,13 +66,17 @@ class SignUpScreen extends StatelessWidget {
                           label: 'Senha',
                           isSecrect: true,
                         ),
-                        const CustomTextField(
+                        CustomTextField(
                           icon: Icons.phone,
                           label: 'Celular',
+                          keyboardType: TextInputType.phone,
+                          inputFormatters: [phoneFormartter],
                         ),
-                        const CustomTextField(
+                        CustomTextField(
                           icon: Icons.file_copy,
                           label: 'CPF',
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [cpfFormartter],
                         ),
                         SizedBox(
                           height: 50,
